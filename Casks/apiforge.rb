@@ -1,13 +1,13 @@
 cask "apiforge" do
-  version "0.3.0"
+  version "0.3.1"
 
   on_arm do
-    sha256 "a41391c40d7d546a351e374332b7cb093237870d7dbae4ef460373bcddfd1e2d"
+    sha256 "3ac0448e4193894c9f2a73b021af748b125cf5abc70810c85a9ef14c5fc79763"
     url "https://github.com/Mahendra-MR/apiforge/releases/download/v#{version}/APIForge-AI-#{version}-arm64.dmg"
   end
 
   on_intel do
-    sha256 "01395204cb628fa9f6c7a3a0e1e5f21211610ee741a09fbae082af2ee09237d0"
+    sha256 "0ca009f43b4eb3e17b6e490359b35e89ee92a0841c51e198cad7cc3893bb8d0d"
     url "https://github.com/Mahendra-MR/apiforge/releases/download/v#{version}/APIForge-AI-#{version}-x64.dmg"
   end
 
