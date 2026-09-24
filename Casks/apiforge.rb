@@ -1,17 +1,17 @@
 cask "apiforge" do
-  version "0.3.1"
+  version "0.3.2"
 
   on_arm do
-    sha256 "3ac0448e4193894c9f2a73b021af748b125cf5abc70810c85a9ef14c5fc79763"
-    url "https://github.com/Mahendra-MR/apiforge/releases/download/v#{version}/APIForge-AI-#{version}-arm64.dmg"
+    sha256 "c4bed943c34f06f423b4eed4bfbd6b7c330d2f5ca9d0bcc23d0d77fd25df6c1a"
+    url "https://github.com/Mahendra-MR/apiforge/releases/download/v#{version}/APIForge-#{version}-arm64.dmg"
   end
 
   on_intel do
-    sha256 "0ca009f43b4eb3e17b6e490359b35e89ee92a0841c51e198cad7cc3893bb8d0d"
-    url "https://github.com/Mahendra-MR/apiforge/releases/download/v#{version}/APIForge-AI-#{version}-x64.dmg"
+    sha256 "3c681699366fba947e4e61674e4ab90333888140899d6c56b7b017ede16981e9"
+    url "https://github.com/Mahendra-MR/apiforge/releases/download/v#{version}/APIForge-#{version}-x64.dmg"
   end
 
-  name "APIForge AI"
+  name "APIForge"
   desc "Lightweight, AI-assisted API testing and development platform"
   homepage "https://github.com/Mahendra-MR/apiforge"
 
@@ -22,14 +22,15 @@ cask "apiforge" do
   # actual corruption. Stripping the quarantine flag Homebrew/macOS attaches
   # on download avoids that dialog entirely, so do it automatically instead
   # of asking every user to run xattr by hand.
-  app "APIForge AI.app"
+  app "APIForge.app"
 
   postflight do
     system_command "/usr/bin/xattr",
-                    args: ["-cr", "#{appdir}/APIForge AI.app"]
+                    args: ["-cr", "#{appdir}/APIForge.app"]
   end
 
   zap trash: [
+    "~/Library/Application Support/APIForge",
     "~/Library/Application Support/APIForge AI",
     "~/Library/Preferences/dev.apiforge.desktop.plist",
     "~/Library/Saved Application State/dev.apiforge.desktop.savedState",
